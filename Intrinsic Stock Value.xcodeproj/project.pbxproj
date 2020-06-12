@@ -15,6 +15,7 @@
 		1E0EF46C247B70C8004A2C17 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E0EF46B247B70C8004A2C17 /* main.m */; };
 		1E0EF473247B70F1004A2C17 /* StockManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E0EF472247B70F1004A2C17 /* StockManager.m */; };
 		1E350E7F24875932000BC95C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E350E7E24875932000BC95C /* ViewController.m */; };
+		1E3CA6E3248FF33100151CE5 /* DataIO.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E3CA6E2248FF33100151CE5 /* DataIO.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,8 @@
 		1E350E7E24875932000BC95C /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		1E350E8F2489D1A0000BC95C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		1E350E902489D1A0000BC95C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		1E3CA6E1248FEF5F00151CE5 /* DataIO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataIO.h; sourceTree = "<group>"; };
+		1E3CA6E2248FF33100151CE5 /* DataIO.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataIO.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +70,8 @@
 		1E0EF458247B70C7004A2C17 /* Intrinsic Stock Value */ = {
 			isa = PBXGroup;
 			children = (
+				1E3CA6DF248FED1300151CE5 /* DataIO */,
+				1E3CA6DE248FED0700151CE5 /* Manager */,
 				1E0EF459247B70C7004A2C17 /* AppDelegate.h */,
 				1E0EF45A247B70C7004A2C17 /* AppDelegate.m */,
 				1E0EF45C247B70C7004A2C17 /* SceneDelegate.h */,
@@ -78,8 +83,6 @@
 				1E0EF467247B70C8004A2C17 /* LaunchScreen.storyboard */,
 				1E0EF46A247B70C8004A2C17 /* Info.plist */,
 				1E0EF46B247B70C8004A2C17 /* main.m */,
-				1E0EF472247B70F1004A2C17 /* StockManager.m */,
-				1E0EF474247B70FE004A2C17 /* StockManager.h */,
 			);
 			path = "Intrinsic Stock Value";
 			sourceTree = "<group>";
@@ -92,6 +95,24 @@
 			);
 			name = iOS;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		1E3CA6DE248FED0700151CE5 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				1E0EF472247B70F1004A2C17 /* StockManager.m */,
+				1E0EF474247B70FE004A2C17 /* StockManager.h */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		1E3CA6DF248FED1300151CE5 /* DataIO */ = {
+			isa = PBXGroup;
+			children = (
+				1E3CA6E1248FEF5F00151CE5 /* DataIO.h */,
+				1E3CA6E2248FF33100151CE5 /* DataIO.m */,
+			);
+			path = DataIO;
 			sourceTree = "<group>";
 		};
 		84812758A532E370FA39DD54 /* Frameworks */ = {
@@ -178,6 +199,7 @@
 				1E0EF46C247B70C8004A2C17 /* main.m in Sources */,
 				1E0EF45E247B70C7004A2C17 /* SceneDelegate.m in Sources */,
 				1E350E7F24875932000BC95C /* ViewController.m in Sources */,
+				1E3CA6E3248FF33100151CE5 /* DataIO.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

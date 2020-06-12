@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
+#import "./Manager/StockManager.h"
 
 @interface ViewController : UIViewController
 

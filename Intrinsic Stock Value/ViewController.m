@@ -7,7 +7,6 @@
 //
 //#import "AppDelegate.h"
 #import "ViewController.h"
-#import "StockManager.h"
 
 @interface ViewController ()
 @property (strong, nonatomic) IBOutlet UITextField *tickerInput;
@@ -34,20 +33,16 @@
 }
 
 -(void)uiSetup {
-    [_manager setTicker: @"aapl"];
-    
-    _drSlider.minimumValue = 0.01;
+    _drSlider.minimumValue = 0;
     _drSlider.maximumValue = 0.2;
-    _drSlider.value = 0.09;
+    _drSlider.value = 0.08;
     self.drLabel.text = [NSString stringWithFormat:@"%%%1.1f", self.drSlider.value*100];
     _peSlider.minimumValue = 0;
     _peSlider.maximumValue = 50;
-    _peSlider.value = self.manager.pe;
+    _peSlider.value = [[self.manager.stockData objectForKey:@"pe"] doubleValue];
     self.peLabel.text = [NSString stringWithFormat:@"%1.1f", self.peSlider.value];
-    
-    NSLog(@"%1.1f, slider: %f", self.manager.pe, self.peSlider.value);
-    
-    _agSlider.minimumValue = 0.01;
+        
+    _agSlider.minimumValue = -0.1;
     _agSlider.maximumValue = 0.2;
     _agSlider.value = 0.115;
     self.agLabel.text = [NSString stringWithFormat:@"%%%1.1f", self.agSlider.value*100];
@@ -60,17 +55,16 @@
 
 - (IBAction)goButtonPressed:(UIButton *)sender {
     //special case for when user needs to reset slide val
-    [_peSlider setValue: _manager.pe];
-    
+    _peSlider.value = [[self.manager.stockData objectForKey:@"pe"] doubleValue];
     [self updateUI];
 }
 
 
 - (void) updateUI {
-    if(![[_manager tickerName] isEqualToString: _tickerInput.text]) {
+    if(![[_manager.stockData objectForKey:@"ticker"] isEqualToString: _tickerInput.text]) {
         [_manager setTicker: _tickerInput.text];
-        _cnLabel.text = _manager.tickerFullName;
-        [_peSlider setValue: _manager.pe];
+        _cnLabel.text = [_manager.stockData objectForKey:@"name"];
+        _peSlider.value = [[self.manager.stockData objectForKey:@"pe"] doubleValue];
         [_agSlider setValue: 0.115];
         [_drSlider setValue: 0.09];
     }

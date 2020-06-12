@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "StockManager.h"
+#import "./Manager/StockManager.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 @property StockManager * stockManager;
