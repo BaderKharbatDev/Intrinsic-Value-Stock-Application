@@ -80,7 +80,6 @@
 				1E0EF45F247B70C7004A2C17 /* ViewController.h */,
 				1E0EF462247B70C7004A2C17 /* Main.storyboard */,
 				1E0EF465247B70C8004A2C17 /* Assets.xcassets */,
-				1E0EF467247B70C8004A2C17 /* LaunchScreen.storyboard */,
 				1E0EF46A247B70C8004A2C17 /* Info.plist */,
 				1E0EF46B247B70C8004A2C17 /* main.m */,
 			);
@@ -118,6 +117,7 @@
 		84812758A532E370FA39DD54 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1E0EF467247B70C8004A2C17 /* LaunchScreen.storyboard */,
 				1E350E912489D1A0000BC95C /* iOS */,
 			);
 			name = Frameworks;

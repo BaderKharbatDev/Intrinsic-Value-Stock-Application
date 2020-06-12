@@ -41,13 +41,14 @@
     _peSlider.maximumValue = 50;
     _peSlider.value = [[self.manager.stockData objectForKey:@"pe"] doubleValue];
     self.peLabel.text = [NSString stringWithFormat:@"%1.1f", self.peSlider.value];
-        
+    
     _agSlider.minimumValue = -0.1;
     _agSlider.maximumValue = 0.2;
-    _agSlider.value = 0.115;
+    _agSlider.value = [[self.manager.stockData objectForKey:@"growth"] floatValue]/100;
+    
     self.agLabel.text = [NSString stringWithFormat:@"%%%1.1f", self.agSlider.value*100];
 
-    _tickerInput.text = @"aapl";
+    _tickerInput.text = [self.manager.stockData objectForKey:@"ticker"];
     _goBuutton.layer.cornerRadius = 5;
     _goBuutton.clipsToBounds = true;
     [self updateUI];
@@ -56,6 +57,7 @@
 - (IBAction)goButtonPressed:(UIButton *)sender {
     //special case for when user needs to reset slide val
     _peSlider.value = [[self.manager.stockData objectForKey:@"pe"] doubleValue];
+    _agSlider.value = [[self.manager.stockData objectForKey:@"growth"] floatValue]/100;
     [self updateUI];
 }
 
@@ -65,7 +67,7 @@
         [_manager setTicker: _tickerInput.text];
         _cnLabel.text = [_manager.stockData objectForKey:@"name"];
         _peSlider.value = [[self.manager.stockData objectForKey:@"pe"] doubleValue];
-        [_agSlider setValue: 0.115];
+        _agSlider.value = [[self.manager.stockData objectForKey:@"growth"] floatValue]/100;
         [_drSlider setValue: 0.09];
     }
     
